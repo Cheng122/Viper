@@ -1,11 +1,11 @@
-# Unsupervised human-to-robot motion retargeting via expressive latent space
+# Viper: Verifiable Imitation Learning Policy for Efficient Robotic Manipulation
 
+Webpage for "Viper: Verifiable Imitation Learning Policy for Efficient Robotic Manipulation"
+- Xianfeng Cheng
+- Qing Gao
+- Guangyu Chen
+- Rui Xiong
+- Junjie Hu
+- Yulan Guo
+- Zhaojie Ju
 
-Webpage for "Unsupervised human-to-robot motion retargeting via expressive latent space"
-- Yashuai Yan
-- Esteve Valls Mascaro
-- Dongheui Lee
-
-Autonomous Systems, TU Wien, 1040 Wien
-German Aerospace Center (DLR)
-                
