@@ -145,7 +145,10 @@
       <div class="container">
         <div class="item">
           <p style="margin-bottom: 30px">
-          <img src="assets/images/teaser_img.png" alt="Motivation of our model"/>
+          <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <source src="assets/videos/Viper_compressed.mp4"
+          type="video/mp4">
+          </video>
           </p>
         </div>
     </div>
@@ -156,7 +159,7 @@
     
 <section class="section hero is-light">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
+    <!-- Brief Description. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
 
@@ -168,7 +171,7 @@
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
+    <!-- Brief Description. -->
   </div>
 </section>
 
@@ -177,18 +180,16 @@
     <div class="container">
 
       <div class="column is-centered has-text-centered">
-        <img src="assets/images/arc_details_hq.png" alt="Motivation of our model"/>
+        <img src="assets/images/teaser_image.png" alt="Motivation of our model"/>
       </div>    
   </div>
 </div>
 </section>
 
 
-
-
 <section class="section hero is-light">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
+    <!-- Core Insight. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
          <h2 class="title is-3">Core Insight</h2> 
@@ -196,22 +197,10 @@
           <p>
 			Viper replaces the explicit online optimization module of NMPC with a unified predictive model, which, in conjunction with a corresponding feedback, enables the efficient execution of IL tasks. Furthermore, Viper reframes IL as an intelligent tracking problem centered on expert trajectories. This provides a new lens through which to assess the reliability of learned policies, leveraging the Lyapunov stability analysis.
 		  </p>
-        <div class="columns is-centered has-text-centered">
-            <div class="item">
-          <p style="margin-bottom: 30px">
-<!--
-        <video poster="" id="tree" autoplay controls muted loop height="100%">
-          <source src="static/figures/MDM-page.mp4"
-          type="video/mp4">
-        </video>
- --><br><br>
-        </p>
-        </div>
-            </div>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
+    <!--/ Core Insight. -->
   </div>
 </section>
 
@@ -221,260 +210,27 @@
     <div class="container">
 
       <div class="column is-centered has-text-centered">
-        <img src="static/figures/modeloverview.jpg" alt="Architecture of our ImitationNet"/>
+        <img src="assets/images/arc_details_hq.png" alt="Architecture of Viper"/>
       </div>    
   </div>
 </div>
 </div>
 </section>
 
-
-      <section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Human Motion Retargeting From Videos</h2>
-          <p>
-
-            We estimate the human pose from RGB images using an off-the-shelf pose estimator and we feed our ImitationNet model with the predicted human pose. Our model can control the real TiaGo robot in real-time thanks to its light-weight design with a high-accuracy in the retargeting.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-  </div>
-</section> 
-
-    
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          
-      <div class="column is-centered has-text-centered">
-        <p><b> “A human and TiaGo are moving among obstacles”</b></p>
-                <video poster="" id="tree" autoplay controls muted loop height="100%">
-                  <source src="static/figures/videos/s0_moving.mp4" type="video/mp4">
-                </video>
-      </div>
-      <div class="column is-centered has-text-centered">
-        <p><b> “A human and TiaGo are moving among obstacles”</b></p>
-                <video poster="" id="tree" autoplay controls muted loop height="100%">
-                  <source src="static/figures/videos/s0_moving2.mp4" type="video/mp4">
-                </video>
-      </div>
-      <div class="column is-centered has-text-centered">
-        <p><b> “A human and TiaGo are moving among obstacles”</b></p>
-                <video poster="" id="tree" autoplay controls muted loop height="100%">
-                  <source src="static/figures/videos/s2_moving.mp4" type="video/mp4">
-                </video>
-      </div>
-        <div class="column is-centered has-text-centered">
-        <p><b> “A human is performing random movements, which TiaGo imitates.”</b></p>
-                <video poster="" id="tree" autoplay controls muted loop height="100%">
-                  <source src="static/figures/videos/random.mp4" type="video/mp4">
-                </video>
-      </div>
-          </div>
-      </div>
-    </div>
-  </section>
-
-
-   <section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Human Motion Retargeting From Text commands</h2>
-          <p>
-
-            We use off-the-shelf text-to-motion models to generate a human motion from textual commands, which we then feed to our ImitationNet model. Our model allows therefore the control of the real TiaGo robot from text commands, which facilitates the deployment of natural human-like movements to robots just using text and without any experts demonstrations or robot data.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-  </div>
-</section> 
-
-    
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          
-      <div class="column is-centered has-text-centered">
-        <p><b> “A man touches his head with his right arm”</b></p>
-                <video poster="" id="tree" autoplay controls muted loop height="100%">
-                  <source src="static/figures/videos/text2motion/A man touches his head with his right arm (x4).mp4" type="video/mp4">
-                </video>
-      </div>
-      <div class="column is-centered has-text-centered">
-        <p><b> “A person is dancing by moving the arms”</b></p>
-                <video poster="" id="tree" autoplay controls muted loop height="100%">
-                  <source src="static/figures/videos/text2motion/A person is dancing by moving the arms (x4).mp4" type="video/mp4">
-                </video>
-      </div>
-      <div class="column is-centered has-text-centered">
-        <p><b> “A person is performing a handshake”</b></p>
-                <video poster="" id="tree" autoplay controls muted loop height="100%">
-                  <source src="static/figures/videos/text2motion/A person is performing a hanshake (x4).mp4" type="video/mp4">
-                </video>
-      </div>
-      <div class="column is-centered has-text-centered">
-        <p><b> “A person waves with his two hands.”</b></p>
-                <video poster="" id="tree" autoplay controls muted loop height="100%">
-                  <source src="static/figures/videos/text2motion/A person waves with his two hands (x4).mp4" type="video/mp4">
-                </video>
-      </div>
-          </div>
-      </div>
-    </div>
-  </section>
-
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Human Motion Retgareting with different robots from textual commands</h2>
-          <p>
-          To showcase the effectiveness of our approach in retargeting more complex robots, we showcase the Nao, Atlas, and JVRC humanoid robots in simulation imitating any human motion provided. Our framework can learn this retargeting with only 40 minutes of training and only using the robot URDF, without any robot annotated data.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-  </div>
-</section> 
-
-    <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          
-      <div class="column is-centered has-text-centered">
-              <video poster="" id="tree" autoplay controls muted loop height="100%">
-                <source src="static/figures/videos/robots_simulation/002627_2.mp4" type="video/mp4">
-              </video>
-      </div>
-      <div class="column is-centered has-text-centered">
-              <video poster="" id="tree" autoplay controls muted loop height="100%">
-                <source src="static/figures/videos/robots_simulation/006861.mp4" type="video/mp4">
-              </video>
-      </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-     <section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Human Motion Retargeting From Key Poses</h2>
-          <p>
-      Thanks to our training contrastive learning approach, ImitationNet builts a tractable latent space where similar poses are pushed together while dissimilar are pushed apart. Our model is then able to generate movements between key poses by uniquely interpolating the representation space of two given poses in the latent space.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> 
-
-    
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container" style="display: flex; flex-wrap: wrap;">         
-        <div class="column is-centered has-text-centered">
-          <p><b> “From both hands in the floor to the arm span”</b></p>
-                  <video poster="" id="tree" autoplay controls muted loop height="100%">
-                    <source src="static/figures/videos/interpolation/down2open.mp4" type="video/mp4">
-                  </video>
-        </div>
-        <div class="column is-centered has-text-centered">
-          <p><b> “From arm span to placing the left arm to the floor”</b></p>
-                  <video poster="" id="tree" autoplay controls muted loop height="100%">
-                    <source src="static/figures/videos/interpolation/open2onehandspan.mp4" type="video/mp4">
-                  </video>
-        </div>
-        <div class="column is-centered has-text-centered">
-          <p><b> “Changing the arm which is closer to the floor”</b></p>
-                  <video poster="" id="tree" autoplay controls muted loop height="100%">
-                    <source src="static/figures/videos/interpolation/onehand2otherhand.mp4" type="video/mp4">
-                  </video>
-        </div>
-        <div class="column is-centered has-text-centered">
-          <p><b> “From arms on the upper position to bottom position”</b></p>
-                  <video poster="" id="tree" autoplay controls muted loop height="100%">
-                    <source src="static/figures/videos/interpolation/up2down.mp4" type="video/mp4">
-                  </video>
-        </div>
-      </div>
-    </div>
-    
-  </section>
-
-
-  <section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Comparison with the baseline</h2>
-          <p>
-        We compare our ImitationNet (TiaGo robot on the left of the simulation) with the previous baseline model (located on the right). Our results shows the smooth and accuracy of the pose retargeting, which outperforms previous state-of-the-art.         </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-  </div>
-</section> 
-
-
-      <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          
-      <div class="column is-centered has-text-centered">
-              <video poster="" id="tree" autoplay controls muted loop height="100%">
-                <source src="static/figures/videos/baselines/baseline1.mp4" type="video/mp4">
-              </video>
-      </div>
-      <div class="column is-centered has-text-centered">
-              <video poster="" id="tree" autoplay controls muted loop height="100%">
-                <source src="static/figures/videos/baselines/baseline2.mp4" type="video/mp4">
-              </video>
-      </div>
-        </div>
-      </div>
-    </div>
-  </section>
-    
-    
 <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>
-@INPROCEEDINGS{10375150,
-  author={Yan, Yashuai and Mascaro, Esteve Valls and Lee, Dongheui},
-  booktitle={2023 IEEE-RAS 22nd International Conference on Humanoid Robots (Humanoids)}, 
-  title={ImitationNet: Unsupervised Human-to-Robot Motion Retargeting via Shared Latent Space}, 
-  year={2023},
-  volume={},
-  number={},
-  pages={1-8},
-  keywords={Robot motion;Measurement;Interpolation;Three-dimensional displays;Humanoid robots;Aerospace electronics;Skeleton},
-  doi={10.1109/Humanoids57100.2023.10375150}}
+@inproceedings{cheng2026viper,
+  title={Viper: Veriﬁable Imitation Learning Policy for Efﬁcient Robotic Manipulation}, 
+  author={Cheng, Xianfeng and Gao, Qing and Chen, Guangyu and Xiong, Rui and Hu, Junjie and Guo, Yulan and Zhao, Jieju},
+  booktitle={2026 IEEE International Conference on Robotics and Automation (ICRA)},
+  pages={x-x},
+  year={2026},
+  organization={IEEE}}
 </code></pre>
     </div>
 </section>
-
-
 
 
 <footer class="footer">
