@@ -160,10 +160,10 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
 
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Brief Description</h2>
         <div class="content has-text-justified">
           <p>
-          Imitation learning (IL) presents a promising paradigm for enabling embodied robots to efficiently acquire human-like manipulation skills. However, prevailing methods face a persistent trade-off between motion precision and computational tractability. To resolve this fundamental challenge, this paper introduces Viper, a framework for Verifiable Imitation learning Policy for Efficient Robotic manipulation. Viper integrates principles of Nonlinear Model Predictive Control (NMPC) within a learning-based model. Grounded in an NMPC-style closed-loop architecture, the proposed method unifies the modeling of nonlinear system dynamics with online, multi-horizon optimization of state-action predictions, while intrinsically embedding physical constraints. This co-design enables both smooth trajectory generation and fast execution. Furthermore, a theoretical stability analysis for the Viper framework is provided. Extensive evaluations, from simulated benchmarks to real-world manipulation tasks, demonstrate that Viper effectively reconciles the competing demands of precision and speed inherent in existing robotic IL paradigms.
+		   	We introduce Viper, a novel visuomotor policy framework that integrates the principles of Nonlinear Model Predictive Control (NMPC) with robotic Imitation Learning (IL).
           </p>
         </div>
       </div>
@@ -191,11 +191,11 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-         <h2 class="title is-3">How does it work?</h2> 
+         <h2 class="title is-3">Core Insight</h2> 
         <div class="content has-text-justified">
           <p>
-Our human-to-robot motion retargeting connects robot control with diverse source modalities, such as a text description, an RGB video, or key poses. Our approach can encode human skeletons into a shared latent space between humans and robots, and subsequently decode these latent variables into the robot’s joint space, enabling direct robot control. Additionally, our approach facilitates the generation of smooth robot motions between human key poses (represented as green and blue dots) through interpolation within the latent space (indicated by the orange dots).
-          </p>
+			Viper replaces the explicit online optimization module of NMPC with a unified predictive model, which, in conjunction with a corresponding feedback, enables the efficient execution of IL tasks. Furthermore, Viper reframes IL as an intelligent tracking problem centered on expert trajectories. This provides a new lens through which to assess the reliability of learned policies, leveraging the Lyapunov stability analysis.
+		  </p>
         <div class="columns is-centered has-text-centered">
             <div class="item">
           <p style="margin-bottom: 30px">
