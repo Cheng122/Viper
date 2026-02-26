@@ -163,11 +163,26 @@ body {
 .eql-cntrb { 
   font-size: smaller;
 }
-/*
-.container {
-  padding-top: 0px;
-  padding-bottom: 3rem;
 
+.btn-icon {
+    width: 20px;
+    height: 20px;
 }
 
-*/
+.demo-placeholder .icon, .task-placeholder .placeholder-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+.execution-placeholder .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+.demo-placeholder .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
