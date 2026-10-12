@@ -196,6 +196,11 @@ def eval_bc(config, ckpt_name, save_episode=True):
     pre_process = lambda s_qpos: (s_qpos - stats['qpos_mean']) / stats['qpos_std']
     post_process = lambda a: a * stats['action_std'] + stats['action_mean']
 
+    # Align with EpisodicDataset when start_ts < history_size: pad raw qpos with zeros, then normalize.
+    _qm = np.asarray(stats["qpos_mean"], dtype=np.float32).reshape(1, -1)
+    _qs = np.asarray(stats["qpos_std"], dtype=np.float32).reshape(1, -1)
+    pad_qpos_normalized = (np.zeros((1, state_dim), dtype=np.float32) - _qm) / _qs
+    
     from sim_env import make_sim_env
     env = make_sim_env(task_name)
     env_max_reward = env.task.max_reward
@@ -259,8 +264,7 @@ def eval_bc(config, ckpt_name, save_episode=True):
                     for i in range(49):
                         zero_image = np.zeros((1, 1, 3, 480, 640), dtype=np.uint8)
                         image_queue.appendleft(zero_image)
-                        zero_qpos = np.zeros((1, 14), dtype=np.uint8)
-                        qpos_queue.appendleft(zero_qpos)
+                        qpos_queue.appendleft(pad_qpos_normalized.copy())
                 else:
                     image_queue.append(curr_image)
                     qpos_queue.append(qpos)
