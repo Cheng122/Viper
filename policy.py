@@ -21,7 +21,7 @@ class ViperPolicy(nn.Module):
         self.optimizer = optimizer
         self.feature_loss_weight = args_override['feature_loss_weight'] if 'feature_loss_weight' in args_override else 0.0
     
-    def __call__(self, qpos, qpos_future, image, image_future, actions=None):
+    def __call__(self, qpos, qpos_future, image, image_future, actions=None, return_full_prediction: bool = False):
         env_state = None
         normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                          std=[0.229, 0.224, 0.225])
@@ -49,7 +49,9 @@ class ViperPolicy(nn.Module):
             return loss_dict
         
         else: # inference time
-            a_hat, a_proprio, _ = self.model(qpos, image, image_future, env_state)  # no action, sample from prior env state=None
+            a_hat, a_proprio, hs_img = self.model(qpos, image, image_future, env_state)
+            if return_full_prediction:
+                return {"a_hat": a_hat, "a_proprio": a_proprio, "hs_img": hs_img}
             return a_hat
     
     def configure_optimizers(self):

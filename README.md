@@ -79,6 +79,57 @@ Viper enables robots to learn complex bimanual manipulation skills from demonstr
 | **Stack Cube** | Stack one cube on top of another |
 | **Storage Cube** | Place a cube into a storage box |
 
+## Perturbation Recovery Experiments
+
+We provide the original local evaluation code and saved insertion experiments for
+object translations and arm joint offsets. The rollout logic, perturbations, cost
+calculation, plots, and videos retain the original experiment definitions.
+
+![Four insertion experiments](results/lyapunov_insertion/compare_four.png)
+
+| Case | Perturbation | Final sampled cost | Video with cost curve |
+| --- | --- | ---: | --- |
+| Nominal | None | 0.482 | — |
+| Object translation | Both objects: (+0.05, +0.05, 0) m at step 60 | 0.454 | [Video](results/lyapunov_insertion_dist_obs/rollout_obs_dist60_sync.mp4) |
+| Joint offset | Both arms: (0.4, −0.4, −0.4, 0.4, −0.4, 0) rad at step 90 | 0.476 | [Video](results/lyapunov_insertion_dist_eef/rollout_eef_dist90_sync.mp4) |
+| Large joint offset | Left: (1,1,1,1,0,0); right: (0,1,1,1,1,0) rad at step 60 | 50.869 | [Video](results/lyapunov_insertion_huge_dist_eef/rollout_huge_eef_dist60_sync.mp4) |
+
+The two smaller perturbations show a recovery in tracking cost and visible
+insertion in video review; the large joint offset does not recover within the
+rollout. These four cases are not a statistical success-rate benchmark. The
+original automatic success labels remain 0: the environment requires contact
+with the internal `pin`, which differs from visually entering the socket.
+
+### Run an experiment
+
+Use the Viper simulation environment with CUDA and a compatible horizon-50
+checkpoint. The checkpoint directory must contain `policy_best.ckpt` and its
+matching `dataset_stats.pkl`. The reference HDF5 must include `/meta/env_state`.
+The original reference has 400 recorded steps followed by 50 repeated tail steps;
+checkpoint and reference files are not included in this code/results release.
+
+```bash
+python eval_lyapunov.py \
+    --gpu 0 --task_name sim_insertion_scripted \
+    --ckpt_dir /path/to/checkpoint_directory \
+    --dataset_dir /path/to/reference_directory --episode_id 0 \
+    --results_dir results/new_object_run \
+    --disturb_type object --disturb_t 60 --delta_xyz 0.05 0.05 0 \
+    --lyapunov_log_stride 10 --omega_pro 1.0 --omega_img 1.0 --lam_u 1.0 \
+    --save_video
+```
+
+Use a new results directory to preserve the archived runs. `eef` denotes joint
+position offsets in radians; `object` denotes a translation in meters. Original
+commands are retained in each result directory's `dist.md`; replace their local
+paths before rerunning. The original qpos/action cost references remain
+`t … t+49`; the expert zero line is reference self-comparison.
+
+Plotting tools are `other_utils/plot_lyapunov_figure.py`,
+`other_utils/plot_lyapunov_compare.py`, and
+`other_utils/make_lyapunov_video_with_plot.py`. The four result directories retain
+the original NPZ, JSON, PNG, raw videos and synchronized videos where available.
+
 ## 🙏 Acknowledgments
 
 - This project builds upon the DETR architecture

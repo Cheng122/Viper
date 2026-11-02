@@ -1,0 +1,15 @@
+{
+  "task_name": "sim_insertion_scripted",
+  "episode_id": 0,
+  "h5_path": "/mnt/e9933268-1ca5-423d-88b2-ec7b2e67a577/Coding/Viper_l1loss_0padding_450train_450eval/data_450_lyapunov_ref/sim_insertion_scripted/episode_0.hdf5",
+  "ckpt_path": "/mnt/e9933268-1ca5-423d-88b2-ec7b2e67a577/Coding/Viper_l1loss_0padding_450train_450eval/ckpt/sim_insertion_scripted/Viper_chunksize_50_stc_bs_16/policy_best.ckpt",
+  "horizon": 50,
+  "disturb_t": 90,
+  "disturb_type": "eef",
+  "success": 0.0,
+  "env_max_reward": 4.0,
+  "lyapunov_log_stride": 10,
+  "paper_omega_pro": 1.0,
+  "paper_omega_img": 1.0,
+  "paper_lam_u": 1.0
+}
